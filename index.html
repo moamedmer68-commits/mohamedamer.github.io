@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio | Mohamed Abdo Amer</title>
+  <meta name="description" content="Professional portfolio of Mohamed Abdo Amer — Projects, Skills, Contact.">
+  <meta name="author" content="Mohamed Abdo Amer">
+  <link rel="icon" href="data:,"><!-- empty fav -->
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071025 0%, #08132a 100%);color:#e6eef6}
+    .container{max-width:980px;margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,#0ea5a9,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:24px}
+    p.lead{margin:4px 0 0;color:var(--muted)}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+    @media(min-width:880px){.grid{grid-template-columns:2fr 1fr}}
+    .hero{display:flex;flex-direction:column;gap:12px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#001}
+    .projects{display:grid;gap:12px}
+    .project{display:flex;flex-direction:column;padding:12px;border-radius:10px;background:var(--glass)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:14px}
+    .skill-badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px}
+    .socials{display:flex;gap:10px}
+    .small{font-size:13px;color:var(--muted)}
+    .toggle{padding:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">MO</div>
+        <div>
+          <h1 id="name">Mohamed Abdo Amer</h1>
+          <p class="lead">AI Engineer, Deep Learning & Computer Vision</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="socials">
+          <a class="small" href="https://github.com/" id="github-link">GitHub</a>
+          <a class="small" href="https://www.linkedin.com/in/mohamed-aamer05/" id="linkedin-link">LinkedIn</a>
+        </div>
+        <button class="toggle" id="toggle-theme">Toggle</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card hero">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div>
+            <h2 style="margin:0">Hello, I'm <span id="hero-name">Mohamed Abdo Amer</span></h2>
+            <p class="small" style="margin-top:6px">I build AI and web applications with focus on usability. Technologies I love: Python, Machine Learning, Deep Learning, Computer Vision.</p>
+            <div class="actions" style="margin-top:12px">
+              <a class="btn primary" id="hire-btn" href="mailto:moamedmer68@gmail.com">Contact Me</a>
+              <a class="btn" id="resume-btn" href="resume.pdf" download>Download Resume</a>
+              <a class="btn" href="#projects">My Projects</a>
+            </div>
+          </div>
+          <div class="card" style="min-width:200px;text-align:center">
+            <div style="font-weight:700;font-size:18px">Years of Experience</div>
+            <div style="color:var(--muted);margin-top:6px" id="years">1</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px">
+          <h3 style="margin:0 0 8px 0">Quick Summary</h3>
+          <p class="small">I focus on building scalable products with quality, performance, and user experience in mind. I also contribute to open-source projects and technical tutorials.</p>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Skills</h3>
+        <div class="skill-badges" id="skills">
+          <div class="badge">Python</div>
+          <div class="badge">Machine Learning</div>
+          <div class="badge">Deep Learning</div>
+          <div class="badge">Computer Vision</div>
+          <div class="badge">TensorFlow</div>
+          <div class="badge">PyTorch</div>
+          <div class="badge">Data Analysis</div>
+          <div class="badge">Git & GitHub</div>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+        <h4 style="margin:6px 0">Contact</h4>
+        <div class="small">Email: <a href="mailto:moamedmer68@gmail.com">moamedmer68@gmail.com</a></div>
+        <div class="small">Website: <a href="#">www.ahmedsite.com</a></div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+        <h4 style="margin:6px 0">Languages</h4>
+        <div class="tags">
+          <div class="small">Arabic (Native)</div>
+          <div class="small">English (Advanced)</div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="projects" class="card" style="margin-top:18px">
+      <h3 style="margin-top:0">Projects</h3>
+      <div class="projects">
+        <!-- Projects on your website will appear automatically -->
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h3 style="margin-top:0">Previous Experiences / Clients</h3>
+      <div class="small">List of companies or projects you collaborated with, with short links (add case studies or reports if available).</div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h3 style="margin-top:0">Get in Touch</h3>
+      <p class="small">Send me an email or open a GitHub issue.</p>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <a class="btn primary" href="mailto:moamedmer68@gmail.com">Send Email</a>
+        <a class="btn" href="https://github.com/" id="github-issues">Open Issue</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">© <span id="year"></span> Mohamed Abdo Amer — Open Source Portfolio on GitHub</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('toggle-theme');
+    toggle.addEventListener('click', ()=>{
+      if(document.documentElement.style.filter === 'invert(1)'){
+        document.documentElement.style.filter = '';
+      } else {
+        document.documentElement.style.filter = 'invert(1) hue-rotate(180deg)';
+      }
+    });
+  </script>
+</body>
+</html>
