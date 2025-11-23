@@ -22,11 +22,13 @@
     @media(min-width:880px){.grid{grid-template-columns:2fr 1fr}}
     .hero{display:flex;flex-direction:column;gap:12px}
     .actions{display:flex;gap:8px;flex-wrap:wrap}
-    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));cursor:pointer}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));cursor:pointer;text-decoration:none;color:#e6eef6;font-size:14px;transition:0.2s}
     .btn.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#001}
-    .projects{display:grid;gap:12px}
-    .project{display:flex;flex-direction:column;padding:12px;border-radius:10px;background:var(--glass)}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+    .btn:hover{opacity:0.85;transform:translateY(-2px)}
+    .projects{display:grid;gap:12px;margin-top:12px}
+    .project{display:flex;flex-direction:column;padding:12px;border-radius:10px;background:var(--glass);transition:0.2s}
+    .project:hover{background:rgba(255,255,255,0.05)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:6px}
     footer{margin-top:26px;text-align:center;color:var(--muted);font-size:14px}
     .skill-badges{display:flex;gap:8px;flex-wrap:wrap}
     .badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px}
@@ -107,9 +109,7 @@
 
     <section id="projects" class="card" style="margin-top:18px">
       <h3 style="margin-top:0">Projects</h3>
-      <div class="projects">
-        <!-- Projects on your website will appear automatically -->
-      </div>
+      <div class="projects"></div>
     </section>
 
     <section class="card" style="margin-top:18px">
@@ -133,6 +133,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const toggle = document.getElementById('toggle-theme');
     toggle.addEventListener('click', ()=>{
       if(document.documentElement.style.filter === 'invert(1)'){
@@ -140,6 +141,39 @@
       } else {
         document.documentElement.style.filter = 'invert(1) hue-rotate(180deg)';
       }
+    });
+
+    // Projects Data
+    const projectsData = [
+      {
+        title: "Chat Bot",
+        description: "Interactive chat application built with Streamlit and Google’s Gemini 2.5, enabling seamless AI-powered conversations through a simple and user-friendly interface.",
+        tech: ["Streamlit==1.38.0", "google-generativeai==0.8.3"],
+        demo: "https://chatbotapplication-jyekdqiu9j3so4rmqioqhr.streamlit.app/",
+        github: "https://github.com/moamedmer68-commits/ChatBot_Application"
+      },
+      {
+        title: "Object-Detector-Application",
+        description: "Web app built with Streamlit and Hugging Face Transformers for object detection, allowing users to upload images and visualize detected objects with bounding boxes and confidence scores.",
+        tech: ["streamlit", "transformers", "torch", "Pillow", "numpy", "timm"],
+        demo: "https://2yhkoqswnkgmufxhxjwfdg.streamlit.app/",
+        github: "https://github.com/moamedmer68-commits/Object-Detector-Application-/tree/main"
+      }
+    ];
+
+    const container = document.querySelector(".projects");
+    projectsData.forEach(p => {
+      container.innerHTML += `
+        <div class="project">
+          <h4>${p.title}</h4>
+          <p class="small">${p.description}</p>
+          <div class="tags">${p.tech.map(t => `<div>${t}</div>`).join("")}</div>
+          <div class="actions" style="margin-top:8px">
+            ${p.demo ? `<a class="btn primary" href="${p.demo}" target="_blank">Live Demo</a>` : ""}
+            ${p.github ? `<a class="btn" href="${p.github}" target="_blank">GitHub</a>` : ""}
+          </div>
+        </div>
+      `;
     });
   </script>
 </body>
